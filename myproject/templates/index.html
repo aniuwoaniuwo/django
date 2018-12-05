@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--这里显示的是首页，首先给出三个分类，然后点进去扥类就会有各个文章，最好还要修饰这个页面，为了美观所以名字要是链接这是这个页面的功能与内容-->
+<html lang="en">
+<head>
+    <style>
+    body{
+    background-image:url('/static/images/图书馆.png');
+    background-size:1400px 600px;
+    background-repeat:no-repeat;
+
+    background-color:rgba(0,0,255,0.2);
+    }
+    a.toux:link{color:blue;
+        background-color:rgba(60,60,00,0.3);
+        text-align:center;
+        text-decoration:underline;}
+        a.toux:visited{color:red;}
+        a.toux:hover{color:yellow;}
+        a.toux:active{color:#60ffc2;}
+       div.desc{
+
+      text-align:right;
+      font-weight: normal;
+      width: 120px;
+      margin: 2px;
+       }
+</style>
+
+    <meta charset="UTF-8">
+    <title>阿牛喔小型资料库</title>
+    <div><a class="toux" href=""><img src="/static/images/吴彦祖.png" width="60" height="90" alt="找不到图片！" align="right"></a>
+
+        </div>
+    <h1 style="text-align:center;">资料库</h1>
+    <p style="text-align:center;">作者 阿牛喔</p>
+    <hr/>
+
+</head>
+<body>
+
+<ul>
+    {% for classification in  classifications %}
+        <li>
+            <a class="toux" href="{{ classification.getslug }}"> {{ classification.name }} </a>
+            <br/>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style> body{
+    background-image:url('para.jpg');
+    background-color:rgba(0,0,255,0.2);
+    }
+    </style>
+    <meta charset="UTF-8">
+    <title>阿牛喔的论文</title>
+</head>
+<body>
+<h1 style="text-align:center;">欢迎光临，祝您生活愉快！</h1>
+<p style="text-align:right;">简介：{{classification1.intro}}</p>
+    <br/>
+<p>列表</p>
+<ol>
+{% for datas in classification1.data_set.all%}<!--这里用到了另外一个类，函数要掌握-->
+<liv><!--要加这个liv,不然这个函数实现不了-->
+    <a href="{{ datas.getdata }}">{{datas.title}}</a><br/>
+</liv>
+{% endfor %}
+</ol>
+</body>
+</html>
